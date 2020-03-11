@@ -11,6 +11,7 @@ log = flask.current_app.logger
 class UsernamePasswordForm(FlaskForm):
     username = StringField('username')
     password = PasswordField('password')
+    submit = SubmitField('submit')
 
 @bp.route('/', methods=('GET', 'POST'))
 def index():
@@ -24,4 +25,4 @@ def index():
         # TODO
         #return something
 
-    return render_template('index.html', form = form)
+    return flask.render_template('main/index.html', form = form)

@@ -1,11 +1,12 @@
 import flask
+from flask import Flask
 from werkzeug.routing import Rule
 from werkzeug.middleware.proxy_fix import ProxyFix
 
 import logging
 
 def _force_https(wsgi_app):
-    def wrapper(environe, start_response):
+    def wrapper(environ, start_response):
         environ['wsgi.url_scheme'] = 'https'
         return wsgi_app(environ, start_response)
     return wrapper
