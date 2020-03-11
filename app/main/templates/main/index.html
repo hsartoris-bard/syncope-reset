@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Hello there</h1>
+
+<form method="post">
+	{{ form.csrf_token }}
+	{{ form.username }}
+	{{ form.password }}
+</form>
+{% endblock %}
