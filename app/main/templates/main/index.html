@@ -2,10 +2,14 @@
 {% block content %}
 <h1>Hello there</h1>
 
+{% if form %}
 <form method="post">
 	{{ form.csrf_token }}
 	{{ form.username }}
 	{{ form.password }}
 	{{ form.submit }}
 </form>
+{% else %}
+<p>Good job, your user key is <strong>{{ key }}</strong></p>
+{% endif %}
 {% endblock %}
